@@ -1,0 +1,440 @@
+* {
+    font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex; 
+    justify-content:center; 
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 56px;
+    margin: 5px 20px;
+    left: 18%;
+    z-index: 2; 
+}
+
+
+.separador {
+    font-size: 30px;
+    color: #000;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-list, .submenu-list {
+    z-index: 3; 
+    display: none;
+    list-style:none;
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: auto;
+    left: 50; 
+    top: 10%; 
+}
+
+.menu-list li, .submenu-list li {
+    position: relative;
+    white-space: nowrap; 
+}
+
+.submenu-list {
+    display: none; /* Ocultar por defecto */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; 
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 200px; 
+    left: 0; 
+}
+
+.menu-button, .submenu-button {
+    display: block;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000;
+    padding: 10px;
+    border: none;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    font-size: 16px;
+}
+
+.menu-button:hover, .submenu-button:hover {
+    background-color: #f1f1f1;
+    text-decoration: underline;
+}
+
+.submenu-list {
+    left: 100%; /* Alinea el submenú a la derecha del botón */
+    top: 0; /* Coloca el submenú a la misma altura que el botón */
+}
+
+.menu-list li a, .submenu-list li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.menu-list li a:hover, .submenu-list li a:hover {
+    background-color: #f1f1f1;
+    text-decoration: underline;
+}
+
+.submenu-container:hover .submenu-list {
+    display: block; /* Mostrar submenú al hacer hover en el contenedor */
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-around; 
+    gap: 10px; /* Espacio entre columnas */
+}
+
+.column {
+    flex: 1; /* Cada columna ocupará el mismo espacio */
+    margin: 10px; /* Margen entre las columnas */
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center; /* Alineación de texto */
+    font-size: 16px; /* Aumenta el tamaño del texto aquí */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+/* Para que los elementos dentro de las columnas se apilen en una sola columna */
+.column1, .column2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.submenu-container {
+    position: relative; /* Necesario para que el submenú se posicione correctamente */
+}
+
+div {
+    display: flex;
+    gap: 20px; /* Espacio entre los botones */
+}
+
+/* Estilo para los botones y las imágenes */
+div > div {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el texto y la imagen */
+}
+
+/* Estilo para los botones */
+div button {
+    display: block;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000;
+    padding: 10px;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Estilo para los enlaces dentro de los botones */
+div button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Efecto hover para los botones */
+div button:hover {
+    background-color: #f1f1f1;
+    text-decoration: underline;
+}
+
+.botones {
+    margin-left: 50px;
+    display: flex;
+    gap: 20px; 
+}
+
+/* Estilo del carrusel */
+.Carrusel {
+    font-family: Arial, sans-serif;
+    margin: auto; 
+    padding: 55px 0;
+    min-height: 65vh;
+    background-color: #f8f8f8;
+    text-align: center;
+    font-size: 24px;
+    position: relative; 
+    max-width: 1800px;
+    z-index: 1; 
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto; /* Centrar el carrusel horizontalmente */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 800px;
+    object-fit: cover;
+}
+
+.carousel-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 18px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    z-index: 1; 
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilos para los indicadores del carrusel */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.indicator {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #717171;
+}
+
+/* Iconos */
+
+.Iconos {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 20px 0; 
+}
+
+.Iconos > div {
+    display: flex;
+    gap: 100px; 
+}
+
+.Iconos > div > div {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.Iconos img {
+    max-width: 100%; 
+}
+
+.Iconos p {
+    margin: 10px 0 0 0; 
+    font-size: 14px; 
+    color: #0f7c10; 
+}
+.Iconos p:hover {
+    text-decoration: underline;
+}
+
+/* grid - he imagenes */
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+  }
+  
+  .div1 {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+  .div2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .div3 {
+    grid-area: 2 / 2 / 4 / 3;
+  }
+  .div4 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .div5 {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .div6 {
+    grid-area: 4 / 2 / 5 / 3;
+  }
+  
+  .encabezado {
+    font-weight: 700;
+  }
+  
+  .parrafo {
+    font-weight: 400;
+  }
+  
+  .texto-blanco {
+    color: white;
+  }
+  
+  .enlace {
+    text-decoration: none;
+    font-weight: 800;
+  }
+  
+  .enlace:hover {
+    text-decoration: underline;
+    color: #56db56;
+  }
+  
+  .fondo-verde {
+    display: flex;
+    background-color: #107c10;
+    overflow: hidden;
+    min-height: 100%;
+  }
+  
+  .img-grande {
+    max-width: 100%;
+  }
+  
+  .img-pequeña {
+    max-width: 50%;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .img-pequeña:hover {
+    transform: scale(1.2);
+  }
+  
+  .item-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+
+/* footer */
+
+.footer-links {
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: wrap; 
+    gap: 2em;
+    padding: 2em 0;
+    width: 70%; 
+    margin: 0 auto; 
+}
+
+.footer-group {
+    text-align: left;
+    flex: 1 1 2%; 
+    max-width: 10%; 
+    box-sizing: border-box; 
+}
+
+.footer-group h2 {
+    font-size: 1.5em; 
+    display: inline;
+    color: #717171;
+    margin-bottom: 1em; 
+}
+
+.footer-group ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: x-small;
+}
+
+.footer-group ul li {
+    margin: 0.5em 0;
+}
+
+footer {
+    background-color: white;
+    color: #717171;
+    padding: 1em 0;
+    text-align: center; /* Centra el texto en el pie de página */
+}
+
+.footer-links a:hover,
+.footer-group ul li:hover {
+    text-decoration: underline;
+}
